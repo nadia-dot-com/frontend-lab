@@ -1,0 +1,32 @@
+@use "../../variables" as v;
+@use "../../mixins" as m;
+
+.container {
+  @include m.base-container;
+  width: 100%;
+
+  .toll {
+    height: 1600px;
+    width: 100%;
+    background-color: v.$element-background;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: "Scroll Down";
+      position: absolute;
+      top: 20px;
+    }
+  }
+}
+
+.visible {
+  opacity: 1;
+}
+
+.unvisible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}

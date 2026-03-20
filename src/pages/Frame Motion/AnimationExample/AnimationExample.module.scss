@@ -1,0 +1,14 @@
+@use "../../../variables" as v;
+@use "../../../mixins" as m;
+
+.container {
+  margin: 30px 30px;
+  @include m.base-container;
+
+  .vegetables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: v.$main-gap;
+  }
+}

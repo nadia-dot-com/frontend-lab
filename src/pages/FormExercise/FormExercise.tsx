@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import classes from "./FormExercise.module.css";
+import classes from "./FormExercise.module.scss";
+import { span } from "framer-motion/client";
 
 const IMPORTANCE = {
   damaged: "Damaged",
@@ -64,7 +65,7 @@ export function FormExercise() {
       <h2>Send request</h2>
       <form className={classes.form} ref={formRef} onSubmit={(e) => submit(e)}>
         <div>
-          <label>Order ID</label>
+          <label htmlFor="orderID">Order ID</label>
           <input
             className={classes.input}
             type="text"
@@ -78,7 +79,7 @@ export function FormExercise() {
           <label>Email</label>
           <input
             className={classes.input}
-            type="text"
+            type="email"
             name="email"
             placeholder="Write Email"
             required
@@ -107,8 +108,10 @@ export function FormExercise() {
           </button>
         </div>
         <div>
-          {(status === "success" && "Sended succesfully") ||
-            (status === "error" && "Some thing went wrong.. Try again later!")}
+          {status === "success" && <span>"Sended succesfully"</span>}
+          {status === "error" && (
+            <span>"Some thing went wrong.. Try again later!"</span>
+          )}
         </div>
       </form>
     </div>

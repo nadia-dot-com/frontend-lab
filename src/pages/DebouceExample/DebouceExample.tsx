@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 
-import classes from "./DebouceExample.module.css";
+import classes from "./DebouceExample.module.scss";
 import { myDebounce } from "../../utility/lodash/myDebounce";
+import { Wrapper } from "../../components/Wrapper/Wrapper";
 
 export function DebouceExample() {
   const [value, setValue] = useState("");
@@ -23,7 +24,7 @@ export function DebouceExample() {
   }, [value, debounceValidation]);
 
   return (
-    <>
+    <Wrapper>
       <input
         className={classes.input}
         placeholder="Write 4 letters"
@@ -32,6 +33,6 @@ export function DebouceExample() {
         onChange={(e) => setValue(e.target.value)}
       />
       <div className={classes.note}>{error ? "Write min 4 letters" : null}</div>
-    </>
+    </Wrapper>
   );
 }

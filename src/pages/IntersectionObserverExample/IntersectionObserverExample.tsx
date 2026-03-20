@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import classes from "./IntersectionObserverExample.module.css";
+import classes from "./IntersectionObserverExample.module.scss";
 
 type PostProps = {
   albumId: number;

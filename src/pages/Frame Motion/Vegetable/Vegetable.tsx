@@ -1,4 +1,4 @@
-import classes from './Vegetable.module.css'
+import classes from './Vegetable.module.scss'
 
 export function Vegetable({
   vegetable,

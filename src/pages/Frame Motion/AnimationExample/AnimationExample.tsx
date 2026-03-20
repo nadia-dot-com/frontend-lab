@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Vegetable } from "../Vegetable/Vegetable";
 import { VEGETABLES } from "../vegetables";
-import classes from "./AnimationExample.module.css";
 import { VegetableFramerMotion } from "../VegetableFramerMotion/VegetableFramerMotion";
 import { AnimatePresence } from "framer-motion";
+import classes from "./AnimationExample.module.scss";
+import { Wrapper } from "../../../components/Wrapper/Wrapper";
 
 export function AnimationExample() {
   const [vegetables, setVegetables] = useState(VEGETABLES);
@@ -32,6 +33,7 @@ export function AnimationExample() {
     setVegetables((prev) => prev.filter((v) => v != vegetable));
 
   return (
+    <Wrapper>
     <div className={classes.container}>
       <div>Manually</div>
       <div className={classes.vegetables}>
@@ -64,5 +66,7 @@ export function AnimationExample() {
         Add to List
       </button>
     </div>
+
+    </Wrapper>
   );
 }

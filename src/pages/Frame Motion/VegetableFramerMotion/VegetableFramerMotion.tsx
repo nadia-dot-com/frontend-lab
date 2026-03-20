@@ -1,4 +1,4 @@
-import classes from "./VegetableFramerMotion.module.css";
+import classes from "./VegetableFramerMotion.module.scss";
 import { motion } from "motion/react";
 
 export function VegetableFramerMotion({

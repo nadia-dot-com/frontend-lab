@@ -1,3 +1,4 @@
+@use "./variables" as v;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 *,
@@ -18,22 +19,33 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
-  color: black;
+  color: v.$text-color;
   line-height: 1.4;
   font-family: "Inter";
   font-weight: 300;
 }
 
-main {
-  flex: 1;
-}
-
 a {
-  color: black;
+  color: v.$text-color;
   text-decoration: inherit;
   transform: color ease-in-out;
-}
-a:hover {
-  color: blue;
+
+  &:hover {
+    color: v.$secondary-color;
+  }
 }
 
+input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px #848383 solid;
+  outline: none;
+  &:focus {
+    border-bottom-color: #000;
+  }
+}
+
+select {
+  width: 100%;
+  outline: none;
+}

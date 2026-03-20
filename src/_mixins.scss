@@ -1,0 +1,9 @@
+@use "./variables" as v;
+
+@mixin base-container($custom-gap: v.$main-gap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $custom-gap;
+}
