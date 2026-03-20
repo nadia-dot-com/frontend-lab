@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 
 import classes from "./DebouceExample.module.css";
-import { myDebounce } from "../../../utility/lodash/myDebounce";
+import { myDebounce } from "../../utility/lodash/myDebounce";
 
 export function DebouceExample() {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
   const debounceValidation = useCallback(
-      myDebounce((currentValue: string) => {
-          setError(currentValue.length < 4);
-      }, 2000),
+    myDebounce((currentValue: string) => {
+      setError(currentValue.length < 4);
+    }, 2000),
     [],
   );
 
@@ -19,16 +19,7 @@ export function DebouceExample() {
       setError(false);
     }
 
-   debounceValidation(value)
-
-    // const timerId = setTimeout(() => {
-    //   if (value.length >= 4) {
-    //     return;
-    //   } else {
-    //     setError(true);
-    //   }
-    // }, 3000);
-    // return () => clearTimeout(timerId);
+    debounceValidation(value);
   }, [value, debounceValidation]);
 
   return (

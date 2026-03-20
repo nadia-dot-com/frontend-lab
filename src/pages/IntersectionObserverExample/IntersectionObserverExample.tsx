@@ -67,16 +67,15 @@ export function IntersectionObserverExample() {
           <div key={`${element.id}-${index}`} className={classes.element}>
             <img
               src={`https://picsum.photos/id/${element.id}/300/300`}
-              width="300"
-              height="300"
+              
               loading="lazy"
             />
             <div>{element.title}</div>
           </div>
         ))}
       </div>
-      {isLoading && <div>Loading...</div>}
       <div ref={ref}></div>
+      {isLoading && <div>Loading...</div>}
     </>
   );
 }

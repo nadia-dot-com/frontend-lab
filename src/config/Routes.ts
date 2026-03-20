@@ -1,8 +1,11 @@
 export const ROUTES = {
   basePath: "/",
-  mainLoyout: "",
+  infinityScroll: "infinity-scroll",
+  visibleElement: "visible-element",
   resizeObserverExersise: "resize-observer",
   formExercise: "form-exercise",
+  debouce: "debouce",
   examples: "examples",
-  animationExample: "animationExample",
-};
+  frameMotion: "frame-motion",
+  resizeObserver: "resize-observer",
+} as const;

@@ -1,22 +1,34 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "./config/Routes";
-import { MainLoyout } from "./loyouts/MainLoyout";
-import { MainPage } from "./pages/MainPage/MainPage";
 import { FormExercise } from "./pages/FormExercise/FormExercise";
-import { Examples } from "./pages/Examples/Examples";
-import { AnimationExample } from "./pages/Examples2/AnimationExample/AnimationExample";
+import { AnimationExample } from "./pages/Frame Motion/AnimationExample/AnimationExample";
+import { Menu } from "./components/Menu/Menu";
+import classes from "./App.module.css";
+import { Suspense } from "react";
+import { IntersectionObserverExample } from "./pages/IntersectionObserverExample/IntersectionObserverExample";
+import { ElementVisibilityExample } from "./pages/ElementVisibilityExample/ElementVisibilityExample";
+import { DebouceExample } from "./pages/DebouceExample/DebouceExample";
+import { ResizeObserverExample } from "./pages/ResizeObserverExample/ResizeObserverExample";
 
 function App() {
   return (
     <BrowserRouter basename={ROUTES.basePath}>
-      <Routes>
-        <Route path={ROUTES.mainLoyout} element={<MainLoyout />}>
-          <Route path="" index element={<MainPage />} />
-          <Route path={ROUTES.formExercise} element={<FormExercise />} />
-          <Route path={ROUTES.examples} element={<Examples />} />
-          <Route path={ROUTES.animationExample} element={<AnimationExample/>}/>
-        </Route>
-      </Routes>
+      <div className={classes.container}>
+        <Menu />
+
+        <main className={classes.content}>
+          <Suspense>
+            <Routes>
+              <Route path={ROUTES.infinityScroll} element={<IntersectionObserverExample/>}/>
+              <Route path={ROUTES.visibleElement} element={<ElementVisibilityExample/>}/>
+              <Route path={ROUTES.formExercise} element={<FormExercise />} />
+              <Route path={ROUTES.frameMotion} element={<AnimationExample />} />
+              <Route path={ROUTES.debouce} element={<DebouceExample/>}/>
+              <Route path={ROUTES.resizeObserverExersise} element={<ResizeObserverExample/>}/>
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
     </BrowserRouter>
   );
 }

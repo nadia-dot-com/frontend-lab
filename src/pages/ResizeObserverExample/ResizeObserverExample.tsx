@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useResize } from "../../hooks/useResize";
 
-export const CardInfo: React.FC = () => {
+export function ResizeObserverExample () {
   const cardRef = useRef<HTMLDivElement>(null);
   const { width } = useResize(cardRef);
 
