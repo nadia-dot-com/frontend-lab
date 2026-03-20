@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  font-size: 14px;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+}
+
+.rights {
+  text-align: center;
+  font-size: 12px;
+}

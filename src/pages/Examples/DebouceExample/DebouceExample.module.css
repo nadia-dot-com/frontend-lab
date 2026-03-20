@@ -1,0 +1,12 @@
+.input {
+  margin: 30px;
+  outline: none;
+  border: none;
+  border-bottom: 1px #ccc solid;
+  width: 100%;
+}
+
+.note {
+  margin: 0 30px;
+  color: red;
+}

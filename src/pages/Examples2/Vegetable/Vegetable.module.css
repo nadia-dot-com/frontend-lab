@@ -1,0 +1,13 @@
+.vegetable {
+  cursor: pointer;
+  animation: vegetableAnimation 0.5s ease-in-out;
+}
+
+@keyframes vegetableAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

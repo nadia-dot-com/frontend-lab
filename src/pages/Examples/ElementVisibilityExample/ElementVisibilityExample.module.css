@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    margin: 20px 30px;
+}
+
+.toll {
+    height: 1200px;
+    background-color: #f6f6f6;
+}
+
+.unvisible {
+    opacity: 1;
+}
+
+.unvisible {
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    opacity: 0;
+}
