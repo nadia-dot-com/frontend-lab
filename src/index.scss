@@ -1,4 +1,4 @@
-@use "./variables" as v;
+@use "@/variables" as v;
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 
 *,
@@ -40,6 +40,7 @@ input {
   border: none;
   border-bottom: 1px #848383 solid;
   outline: none;
+
   &:focus {
     border-bottom-color: #000;
   }

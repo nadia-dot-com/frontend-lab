@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 
 import classes from "./DebouceExample.module.scss";
-import { myDebounce } from "../../utility/lodash/myDebounce";
-import { Wrapper } from "../../components/Wrapper/Wrapper";
+import { myDebounce } from "@/utility/lodash/myDebounce";
+import { Wrapper } from "@/components/Wrapper/Wrapper";
 
 export function DebouceExample() {
   const [value, setValue] = useState("");

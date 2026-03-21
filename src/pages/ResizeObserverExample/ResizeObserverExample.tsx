@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useResize } from "../../hooks/useResize";
+import { useResize } from "@/hooks/useResize";
 
 export function ResizeObserverExample () {
   const cardRef = useRef<HTMLDivElement>(null);

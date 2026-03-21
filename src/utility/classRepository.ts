@@ -1,4 +1,4 @@
-import type { User } from "../types/interfaces";
+import type { User } from "@/types/interfaces";
 import type { HasId } from "./typesFn";
 
 export class Repository<T extends HasId> {

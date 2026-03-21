@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import classes from "./IntersectionObserverExample.module.scss";
+import { AnimatePresence, motion } from "motion/react";
 
 type PostProps = {
   albumId: number;
@@ -63,16 +64,27 @@ export function IntersectionObserverExample() {
   return (
     <>
       <div className={classes.container}>
-        {data.map((element, index) => (
-          <div key={`${element.id}-${index}`} className={classes.element}>
-            <img
-              src={`https://picsum.photos/id/${element.id}/300/300`}
-              
-              loading="lazy"
-            />
-            <div>{element.title}</div>
-          </div>
-        ))}
+        <AnimatePresence mode="popLayout">
+          {data.map((element, index) => (
+            <motion.div
+              key={`${element.id}-${index}`}
+              className={classes.element}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+              }}
+            >
+              <img
+                src={`https://picsum.photos/id/${element.id}/300/300`}
+                loading="lazy"
+              />
+              <div>{element.title}</div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
       <div ref={ref}></div>
       {isLoading && <div>Loading...</div>}

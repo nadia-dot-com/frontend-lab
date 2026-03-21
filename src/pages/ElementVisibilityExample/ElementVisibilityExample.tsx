@@ -1,4 +1,4 @@
-import { useElementVisibility } from "../../hooks/useElementVisibility";
+import { useElementVisibility } from "@/hooks/useElementVisibility";
 import classes from "./ElementVisibilityExample.module.scss";
 
 export function ElementVisibilityExample() {

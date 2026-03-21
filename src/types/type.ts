@@ -1,5 +1,3 @@
-import { use } from "react";
-
 interface User {
   id: number;
   name: string;

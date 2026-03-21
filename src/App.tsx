@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ROUTES } from "./config/Routes";
-import { FormExercise } from "./pages/FormExercise/FormExercise";
-import { AnimationExample } from "./pages/Frame Motion/AnimationExample/AnimationExample";
-import { Menu } from "./components/Menu/Menu";
+import { ROUTES } from "@/config/Routes";
+import { FormExercise } from "@/pages/FormExercise/FormExercise";
+import { AnimationExample } from "@/pages/Frame Motion/AnimationExample/AnimationExample";
+import { Menu } from "@/components/Menu/Menu";
 import { Suspense } from "react";
-import { IntersectionObserverExample } from "./pages/IntersectionObserverExample/IntersectionObserverExample";
-import { ElementVisibilityExample } from "./pages/ElementVisibilityExample/ElementVisibilityExample";
-import { DebouceExample } from "./pages/DebouceExample/DebouceExample";
-import { ResizeObserverExample } from "./pages/ResizeObserverExample/ResizeObserverExample";
+import { IntersectionObserverExample } from "@/pages/IntersectionObserverExample/IntersectionObserverExample";
+import { ElementVisibilityExample } from "@/pages/ElementVisibilityExample/ElementVisibilityExample";
+import { DebouceExample } from "@/pages/DebouceExample/DebouceExample";
+import { ResizeObserverExample } from "@/pages/ResizeObserverExample/ResizeObserverExample";
 import classes from "./App.module.scss";
 
 function App() {

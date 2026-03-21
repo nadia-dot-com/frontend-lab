@@ -1,4 +1,4 @@
-@use "./variables" as v;
+@use "@/variables" as v;
 
 @mixin base-container($custom-gap: v.$main-gap) {
   display: flex;

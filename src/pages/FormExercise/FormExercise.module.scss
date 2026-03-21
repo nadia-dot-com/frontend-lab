@@ -1,5 +1,5 @@
-@use "../../variables" as v;
-@use "../../mixins" as m;
+@use "@/variables" as v;
+@use "@/mixins" as m;
 .container {
   @include m.base-container;
 
@@ -30,6 +30,22 @@
     .containerButton {
       display: flex;
       justify-content: center;
+    }
+
+    .successMessage {
+      text-decoration: underline;
+      color: #28a745; // ładny zielony
+      font-weight: 500;
+      margin-top: 10px;
+      display: block; // żeby span zachowywał się przewidywalnie
+    }
+
+    .errorMessage {
+      text-decoration: underline;
+      color: red; // ładny zielony
+      font-weight: 500;
+      margin-top: 10px;
+      display: block; // żeby span zachowywał się przewidywalnie
     }
   }
 }

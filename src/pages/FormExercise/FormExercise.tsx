@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import classes from "./FormExercise.module.scss";
-import { span } from "framer-motion/client";
 
 const IMPORTANCE = {
   damaged: "Damaged",
@@ -107,12 +107,32 @@ export function FormExercise() {
             {status === "loading" ? "Loading" : "Send"}
           </button>
         </div>
-        <div>
-          {status === "success" && <span>"Sended succesfully"</span>}
-          {status === "error" && (
-            <span>"Some thing went wrong.. Try again later!"</span>
-          )}
-        </div>
+          <AnimatePresence>
+            {status === "success" && (
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className={classes.successMessage}
+                layoutId="underline"
+              >
+                "Sent succesfully"
+              </motion.span>
+            )}
+            {status === "error" && (
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className={classes.errorMessage}
+                layoutId="underline"
+              >
+                "Some thing went wrong.. Try again later!"
+              </motion.span>
+            )}
+          </AnimatePresence>
       </form>
     </div>
   );

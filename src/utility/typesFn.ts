@@ -1,4 +1,4 @@
-import type { Fish } from "../types/interfaces";
+import type { Fish } from "@/types/interfaces";
 // import * as users from '/'
 
 export function pair<K, V>(key: K, value: V): [K, V] {

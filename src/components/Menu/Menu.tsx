@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../config/Routes";
+import { ROUTES } from "@/config/Routes";
 import classes from "./Menu.module.scss";
 
 export function Menu() {
