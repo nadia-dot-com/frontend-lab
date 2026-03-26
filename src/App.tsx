@@ -1,3 +1,4 @@
+import classes from "./App.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "@/config/Routes";
 import { FormExercise } from "@/pages/FormExercise/FormExercise";
@@ -8,9 +9,8 @@ import { IntersectionObserverExample } from "@/pages/IntersectionObserverExample
 import { ElementVisibilityExample } from "@/pages/ElementVisibilityExample/ElementVisibilityExample";
 import { DebouceExample } from "@/pages/DebouceExample/DebouceExample";
 import { ResizeObserverExample } from "@/pages/ResizeObserverExample/ResizeObserverExample";
-import classes from "./App.module.scss";
-import { CSS } from "./pages/CSS/CSS";
 import { ScrollToTop } from "./components/ ScrollToTop/ ScrollToTop";
+import { BrowserTheme } from "./pages/BrowserTheme/BrowserTheme";
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
                 path={ROUTES.resizeObserverExersise}
                 element={<ResizeObserverExample />}
               />
-              <Route path={ROUTES.css} element={<CSS />} />
+              <Route path={ROUTES.browserTheme} element={<BrowserTheme />} />
             </Routes>
           </Suspense>
         </main>

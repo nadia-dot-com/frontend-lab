@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from "react";
-
 import classes from "./DebouceExample.module.scss";
+import { useCallback, useEffect, useState } from "react";
 import { myDebounce } from "@/utility/lodash/myDebounce";
 import { Wrapper } from "@/components/Wrapper/Wrapper";
 

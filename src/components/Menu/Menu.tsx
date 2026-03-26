@@ -8,7 +8,9 @@ export function Menu() {
       <div className={classes.title}>Frontend Laboratory</div>
       <ul>
         <li>
-          <Link to={ROUTES.infinityScroll}>Infinite Scroll + Intersection Observer</Link>
+          <Link to={ROUTES.infinityScroll}>
+            Infinite Scroll + Intersection Observer
+          </Link>
         </li>
         <li>
           <Link to={ROUTES.visibleElement}>
@@ -28,7 +30,7 @@ export function Menu() {
           <Link to={ROUTES.resizeObserver}>Resize Observer </Link>
         </li>
         <li>
-          <Link to={ROUTES.css}>CSS </Link>
+          <Link to={ROUTES.browserTheme}>Browser Theme</Link>
         </li>
       </ul>
     </nav>

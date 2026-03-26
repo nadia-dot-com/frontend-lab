@@ -8,5 +8,5 @@ export const ROUTES = {
   examples: "examples",
   frameMotion: "frame-motion",
   resizeObserver: "resize-observer",
-  css: "css",
+  browserTheme: "browser-theme",
 } as const;
