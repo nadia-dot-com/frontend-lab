@@ -27,6 +27,9 @@ export function Menu() {
         <li>
           <Link to={ROUTES.resizeObserver}>Resize Observer </Link>
         </li>
+        <li>
+          <Link to={ROUTES.css}>CSS </Link>
+        </li>
       </ul>
     </nav>
   );

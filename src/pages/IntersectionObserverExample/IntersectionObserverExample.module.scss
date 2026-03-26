@@ -3,10 +3,12 @@
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-flow: dense;
   justify-content: center;
   align-items: start;
   gap: v.$main-gap;
   padding: 10px;
+  grid-area: "aria-5" ;
 
   .element {
     display: flex;
@@ -16,6 +18,11 @@
     gap: v.$main-gap;
     text-align: center;
     width: 100%;
+  }
+
+  .featured {
+    grid-column: span 2;
+    background-color: #e0e0e0;
   }
 }
 
