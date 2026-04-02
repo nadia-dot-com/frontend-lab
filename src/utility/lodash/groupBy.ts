@@ -31,7 +31,7 @@ const items: Item[] = [
   { id: 1, name: "Sam" },
   { id: 1, name: "Nastia" },
   { id: 1, name: "Nadia" },
-  { id: 4, name: "anton" },
+  { id: 4, name: "Anton" },
 ];
 
 export const filteredItems = groupBy(items, "id");

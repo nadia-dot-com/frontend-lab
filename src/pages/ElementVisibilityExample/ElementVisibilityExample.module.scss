@@ -2,7 +2,7 @@
 @use "@/mixins" as m;
 
 .container {
-  @include m.base-container;
+  @include m.flex-center;
   width: 100%;
 
   .toll {

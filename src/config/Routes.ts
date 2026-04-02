@@ -9,4 +9,5 @@ export const ROUTES = {
   frameMotion: "frame-motion",
   resizeObserver: "resize-observer",
   browserTheme: "browser-theme",
+  usersFiltering: "users-filtering",
 } as const;

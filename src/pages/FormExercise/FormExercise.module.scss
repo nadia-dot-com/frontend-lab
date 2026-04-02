@@ -1,7 +1,8 @@
 @use "@/variables" as v;
 @use "@/mixins" as m;
+
 .container {
-  @include m.base-container;
+  @include m.flex-center(column);
 
   .form {
     display: flex;

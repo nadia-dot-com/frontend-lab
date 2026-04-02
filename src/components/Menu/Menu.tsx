@@ -32,6 +32,9 @@ export function Menu() {
         <li>
           <Link to={ROUTES.browserTheme}>Browser Theme</Link>
         </li>
+         <li>
+          <Link to={ROUTES.usersFiltering}>Users Filtering</Link>
+        </li>
       </ul>
     </nav>
   );

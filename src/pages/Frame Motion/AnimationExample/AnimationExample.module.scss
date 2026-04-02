@@ -3,7 +3,7 @@
 
 .container {
   margin: 30px 30px;
-  @include m.base-container;
+  @include m.flex-center(column);
 
   .vegetables {
     display: flex;

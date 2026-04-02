@@ -11,6 +11,7 @@ import { DebouceExample } from "@/pages/DebouceExample/DebouceExample";
 import { ResizeObserverExample } from "@/pages/ResizeObserverExample/ResizeObserverExample";
 import { ScrollToTop } from "./components/ ScrollToTop/ ScrollToTop";
 import { BrowserTheme } from "./pages/BrowserTheme/BrowserTheme";
+import { UsersFilteringPage } from "./pages/UsersFilteringPage/UsersFilteringPage";
 
 function App() {
   return (
@@ -38,6 +39,10 @@ function App() {
                 element={<ResizeObserverExample />}
               />
               <Route path={ROUTES.browserTheme} element={<BrowserTheme />} />
+              <Route
+                path={ROUTES.usersFiltering}
+                element={<UsersFilteringPage />}
+              />
             </Routes>
           </Suspense>
         </main>
