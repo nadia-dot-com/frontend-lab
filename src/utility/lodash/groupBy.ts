@@ -35,4 +35,4 @@ const items: Item[] = [
 ];
 
 export const filteredItems = groupBy(items, "id");
-console.log(filteredItems);
+// console.log(filteredItems);

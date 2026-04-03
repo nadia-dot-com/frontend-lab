@@ -1,14 +1,15 @@
 @use "@/mixins" as m;
 
 .container {
+  @include m.flex-center(column, 20px);
   width: 100%;
 
   .filter {
     display: flex;
-    background-color: #eee;
     justify-content: space-between;
-    padding: 12px 16px;
     width: 100%;
+    padding: 12px 16px;
+    background-color: #eee;
 
     label {
       display: flex;
@@ -16,25 +17,53 @@
     }
   }
 
-  table {
+  .tableWrapper {
+    height: 900px;
+    overflow-y: auto;
+    margin: 20px, 0;
     width: 100%;
-    margin: 40px auto;
-    border-collapse: collapse;
-    font-size: 15px;
 
-    .loading {
-      opacity: 0.5;
+    &::-webkit-scrollbar {
+      width: 4px;
     }
-    
-    thead tr {
-      padding: 12px 16px;
-      font-weight: 600;
-      background-color: #eee;
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 8px;
     }
-    tbody {
+  }
+
+  .tableContainer {
+    width: 100%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+
+      thead {
+        position: sticky;
+        top: 0;
+        background-color: #eee;
+
+        tr {
+          padding: 12px 16px;
+          font-weight: 600;
+        }
+      }
+      th,
       td {
-        padding: 14px 16px;
-        border: 1px solid #eee;
+        width: 25%;
+      }
+
+      tbody {
+        &.loading {
+          opacity: 0.5;
+        }
+        td {
+          padding: 14px 16px;
+          border: 1px solid #eee;
+        }
       }
     }
   }
