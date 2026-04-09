@@ -72,7 +72,6 @@ export function UsersFilteringPage() {
         ))}
       </aside>
 
-      {/* KLUCZOWA ZMIANA: Jedna tabela w jednym kontenerze */}
       <div className="w-full h-[900px] overflow-y-auto my-5">
         <table className="w-full border-collapse border-none text-4">
           <thead className="sticky top-0 bg-slate-200 z-10">
