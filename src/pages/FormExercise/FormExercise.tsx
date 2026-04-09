@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import classes from "./FormExercise.module.scss";
 
 const IMPORTANCE = {
   damaged: "Damaged",
@@ -61,13 +60,16 @@ export function FormExercise() {
   }, [status]);
 
   return (
-    <div className={classes.container}>
+    <div className="flex-center-col">
       <h2>Send request</h2>
-      <form className={classes.form} ref={formRef} onSubmit={(e) => submit(e)}>
-        <div>
+      <form
+        className="flex flex-col justify-start items-start gap-main max-w-[600px] w-full "
+        ref={formRef}
+        onSubmit={(e) => submit(e)}
+      >
+        <div className="w-full">
           <label htmlFor="orderID">Order ID</label>
           <input
-            className={classes.input}
             type="text"
             name="orderID"
             placeholder="Write order ID"
@@ -75,17 +77,11 @@ export function FormExercise() {
             required
           />
         </div>
-        <div>
+        <div className="w-full">
           <label>Email</label>
-          <input
-            className={classes.input}
-            type="email"
-            name="email"
-            placeholder="Write Email"
-            required
-          />
+          <input type="email" name="email" placeholder="Write Email" required />
         </div>
-        <div>
+        <div className="w-full">
           <label>Reason</label>
           <select name="reason" defaultValue={""}>
             <option value="" disabled>
@@ -98,41 +94,42 @@ export function FormExercise() {
             ))}
           </select>
         </div>
-        <div>
+        <div className="w-full">
           <label>Description</label>
+
           <textarea name="description" placeholder="Write note"></textarea>
         </div>
-        <div className={classes.containerButton}>
+        <div className="flex justify-center w-full">
           <button disabled={status === "loading"}>
             {status === "loading" ? "Loading" : "Send"}
           </button>
         </div>
-          <AnimatePresence>
-            {status === "success" && (
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className={classes.successMessage}
-                layoutId="underline"
-              >
-                "Sent succesfully"
-              </motion.span>
-            )}
-            {status === "error" && (
-              <motion.span
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className={classes.errorMessage}
-                layoutId="underline"
-              >
-                "Some thing went wrong.. Try again later!"
-              </motion.span>
-            )}
-          </AnimatePresence>
+        <AnimatePresence>
+          {status === "success" && (
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="underline text-emerald-500 mt-2 block"
+              layoutId="underline"
+            >
+              "Sent succesfully"
+            </motion.span>
+          )}
+          {status === "error" && (
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="underline text-red-500 mt-2 block"
+              layoutId="underline"
+            >
+              "Some thing went wrong.. Try again later!"
+            </motion.span>
+          )}
+        </AnimatePresence>
       </form>
     </div>
   );

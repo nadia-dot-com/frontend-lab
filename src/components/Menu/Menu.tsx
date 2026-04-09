@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/config/Routes";
-import classes from "./Menu.module.scss";
 
 export function Menu() {
   return (
-    <nav className={classes.nav}>
-      <div className={classes.title}>Frontend Laboratory</div>
-      <ul>
+    <nav className="flex flex-col items-center gap-main p-5 bg-primary h-full">
+      <div className="font-medium text-xl border-b border-black">Frontend Laboratory</div>
+      <ul className="flex flex-col p-0 gap-5 list-none overflow-y-auto">
         <li>
           <Link to={ROUTES.infinityScroll}>
             Infinite Scroll + Intersection Observer

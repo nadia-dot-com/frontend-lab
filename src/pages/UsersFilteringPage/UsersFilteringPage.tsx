@@ -1,4 +1,3 @@
-import classes from "./UsersFilteringPage.module.scss";
 import { useFetch } from "@/hooks/useFetch";
 import { useEffect, useMemo, useState, useTransition } from "react";
 import { merge } from "@/utility/lodash/merge";
@@ -17,16 +16,16 @@ export function UsersFilteringPage() {
   }, [storedRoles]);
 
   const { isLoading, data, error } = useFetch<Data>(url);
-  
+
   const users = data?.users || [];
-  
+
   const [search, setSearch] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(users);
   const [isPending, startTransition] = useTransition();
 
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     const value = e.target.value;
-    setSearch(value); 
+    setSearch(value);
 
     startTransition(() => {
       const filtered = users.filter((user) =>
@@ -45,7 +44,7 @@ export function UsersFilteringPage() {
   const columnKeys = Object.keys(columns) as ColumnKey[];
 
   return (
-    <div className={classes.container}>
+    <div className="flex-center-col gap-5 w-full">
       {isLoading && <div>Loading...</div>}
 
       <input
@@ -55,13 +54,12 @@ export function UsersFilteringPage() {
         onChange={handleSearch}
       />
 
-      <aside className={classes.filter}>
+      <aside className="flex justify-between w-full px-3 py-4 bg-slate-200 ">
         {columnKeys.map((col) => (
           <label key={col}>
             <input
-              value={col}
               type="checkbox"
-              checked={roles[col]}
+              checked={!!roles[col]}
               onChange={(e) =>
                 setStoredRoles((prev) => ({
                   ...prev,
@@ -73,27 +71,40 @@ export function UsersFilteringPage() {
           </label>
         ))}
       </aside>
-      <div className={classes.tableContainer}>
-        <table className={classes.headers}>
-          <thead>
+
+      {/* KLUCZOWA ZMIANA: Jedna tabela w jednym kontenerze */}
+      <div className="w-full h-[900px] overflow-y-auto my-5">
+        <table className="w-full border-collapse border-none text-4">
+          <thead className="sticky top-0 bg-slate-200 z-10">
             <tr>
-              {columnKeys.map((col) => roles[col] && <th key={col}>{col}</th>)}
+              {columnKeys.map(
+                (col) =>
+                  roles[col] && (
+                    <th key={col} className="w-1/4 p-3 font-semibold text-left">
+                      {col}
+                    </th>
+                  ),
+              )}
             </tr>
           </thead>
+          <tbody className={isPending ? "opacity-50" : ""}>
+            {filteredUsers.map((user) => (
+              <tr key={user.id}>
+                {columnKeys.map(
+                  (col) =>
+                    roles[col] && (
+                      <td
+                        key={col}
+                        className="w-1/4 py-3 px-4 border border-slate-200"
+                      >
+                        {user[col as keyof typeof user]}
+                      </td>
+                    ),
+                )}
+              </tr>
+            ))}
+          </tbody>
         </table>
-        <div className={classes.tableWrapper}>
-          <table className={classes.users}>
-            <tbody className={isPending ? classes.loading : ""}>
-              {filteredUsers.map((user) => (
-                <tr key={user.id}>
-                  {columnKeys.map(
-                    (col) => roles[col] && <td key={col}>{user[col]}</td>,
-                  )}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );

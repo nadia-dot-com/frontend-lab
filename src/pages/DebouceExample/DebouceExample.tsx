@@ -1,4 +1,3 @@
-import classes from "./DebouceExample.module.scss";
 import { useCallback, useEffect, useState } from "react";
 import { myDebounce } from "@/utility/lodash/myDebounce";
 import { Wrapper } from "@/components/Wrapper/Wrapper";
@@ -25,13 +24,15 @@ export function DebouceExample() {
   return (
     <Wrapper>
       <input
-        className={classes.input}
+        className="mt-2"
         placeholder="Write 4 letters"
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <div className={classes.note}>{error ? "Write min 4 letters" : null}</div>
+      <div className=" text-red-500">
+        {error ? "Write min 4 letters" : null}
+      </div>
     </Wrapper>
   );
 }

@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-sky-100);
+  --color-secondary: var(--color-sky-600);
+  --color-element-bg: var(--color-slate-50);
+  --color-text-main: var(--color-slate-900);
+  --color-input-gray: var(--color-gray-500);
+
+  --spacing-main: 10px;
+
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-scale-out: scale-in 0.2s ease-in forwards;
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+}
+
+@layer components {
+  .flex-center {
+    @apply flex items-center justify-center gap-main;
+  }
+
+  .flex-center-col {
+    @apply flex items-center justify-center gap-main flex-col;
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white);
+    color: var(--color-text-main);
+    line-height: 1.4;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+  }
+
+  a {
+    color: var(--color-text-main);
+    text-decoration: inherit;
+    transition: color ease-in-out;
+  }
+  a:hover {
+    color: var(--color-secondary);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--color-input-gray);
+    outline: none;
+    font-family: inherit;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-bottom-color: var(--color-input-black);
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transition: all 0.3s ease-in-out;
+    border-radius: var(--radius-lg);
+  }
+
+  button:hover {
+    background-color: var(--color-sky-400);
+  }
+
+  button:disabled {
+    background-color: var(--color-primary);
+  }
+
+  button:active {
+    scale: calc(0.95);
+  }
+
+  label {
+    display: flex;
+    gap: 5px;
+  }
+}

@@ -1,4 +1,3 @@
-import classes from "./VegetableFramerMotion.module.scss";
 import { motion } from "motion/react";
 
 export function VegetableFramerMotion({
@@ -16,7 +15,7 @@ export function VegetableFramerMotion({
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className={classes.vegetable}
+      className="cursor-pointer"
       onClick={onClick}
     >
       {vegetable}

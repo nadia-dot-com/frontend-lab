@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { Vegetable } from "../Vegetable/Vegetable";
 import { VEGETABLES } from "../vegetables";
 import { VegetableFramerMotion } from "../VegetableFramerMotion/VegetableFramerMotion";
 import { AnimatePresence } from "framer-motion";
-import classes from "./AnimationExample.module.scss";
 import { Wrapper } from "@/components/Wrapper/Wrapper";
 
 export function AnimationExample() {
@@ -34,39 +32,26 @@ export function AnimationExample() {
 
   return (
     <Wrapper>
-    <div className={classes.container}>
-      <div>Manually</div>
-      <div className={classes.vegetables}>
-        {vegetables.map((v) => (
-          <Vegetable key={v} onClick={() => deleteVegetable(v)} vegetable={v} />
-        ))}
+      <div className="flex-center-col m-8">
+        <div>Framer Motion</div>
+        <div className="flex flex-wrap justify-center gap-main">
+          <AnimatePresence>
+            {vegetablesMotion.map((v) => (
+              <VegetableFramerMotion
+                key={v}
+                onClick={() => deleteVegetableMotion(v)}
+                vegetable={v}
+              />
+            ))}
+          </AnimatePresence>
+        </div>
+        <button
+          onClick={addVegetableMotion}
+          disabled={vegetablesMotion.length === VEGETABLES.length}
+        >
+          Add to List
+        </button>
       </div>
-      <button
-        onClick={addVegetable}
-        disabled={vegetables.length === VEGETABLES.length}
-      >
-        Add to List
-      </button>
-      <div>Framer Motion</div>
-      <div className={classes.vegetables}>
-        <AnimatePresence>
-          {vegetablesMotion.map((v) => (
-            <VegetableFramerMotion
-              key={v}
-              onClick={() => deleteVegetableMotion(v)}
-              vegetable={v}
-            />
-          ))}
-        </AnimatePresence>
-      </div>
-      <button
-        onClick={addVegetableMotion}
-        disabled={vegetablesMotion.length === VEGETABLES.length}
-      >
-        Add to List
-      </button>
-    </div>
-
     </Wrapper>
   );
 }

@@ -1,4 +1,3 @@
-import classes from "./App.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ROUTES } from "@/config/Routes";
 import { FormExercise } from "@/pages/FormExercise/FormExercise";
@@ -16,10 +15,10 @@ import { UsersFilteringPage } from "./pages/UsersFilteringPage/UsersFilteringPag
 function App() {
   return (
     <BrowserRouter basename={ROUTES.basePath}>
-      <div className={classes.container}>
+      <div className="flex inset-0 absolute">
         <Menu />
 
-        <main className={classes.content}>
+        <main className="flex-1 relative overflow-auto m-5 ">
           <ScrollToTop />
           <Suspense>
             <Routes>
