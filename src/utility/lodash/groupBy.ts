@@ -7,23 +7,24 @@ export function groupBy<T, K extends keyof T>(
   items: T[],
   key: K,
 ): Map<T[K], T[]> {
-  let groupedItems = new Map<T[K], T[]>();
+  let result = new Map<T[K], T[]>();
 
   items.forEach((item) => {
     if (item && typeof item === "object") {
       if (key in item) {
-        if (groupedItems.has(item[key])) {
-          const group = groupedItems.get(item[key]) || [];
+        const value = item[key];
+        const group = result.get(value) || [];
+
+        if (group) {
           group.push(item);
-          groupedItems.set(item[key], group);
         } else {
-          groupedItems.set(item[key], [item]);
+          result.set(value, [item]);
         }
       }
     }
   });
 
-  return groupedItems;
+  return result;
 }
 
 const items: Item[] = [
