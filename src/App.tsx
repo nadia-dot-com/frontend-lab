@@ -11,6 +11,7 @@ import { ResizeObserverExample } from "@/pages/ResizeObserverExample/ResizeObser
 import { ScrollToTop } from "./components/ ScrollToTop/ ScrollToTop";
 import { BrowserTheme } from "./pages/BrowserTheme/BrowserTheme";
 import { UsersFilteringPage } from "./pages/UsersFilteringPage/UsersFilteringPage";
+import { CSSAnimation } from "./pages/CSSAnimation/CSSAnimation";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
                 path={ROUTES.usersFiltering}
                 element={<UsersFilteringPage />}
               />
+              <Route path={ROUTES.cssAnimation} element={<CSSAnimation/>}/>
             </Routes>
           </Suspense>
         </main>

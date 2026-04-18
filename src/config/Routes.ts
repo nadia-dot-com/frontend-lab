@@ -10,4 +10,5 @@ export const ROUTES = {
   resizeObserver: "resize-observer",
   browserTheme: "browser-theme",
   usersFiltering: "users-filtering",
+  cssAnimation: "css-animation",
 } as const;
