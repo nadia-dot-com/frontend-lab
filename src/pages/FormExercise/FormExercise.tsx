@@ -63,7 +63,7 @@ export function FormExercise() {
     <div className="flex-center-col">
       <h2>Send request</h2>
       <form
-        className="flex flex-col justify-start items-start gap-main max-w-[600px] w-full "
+        className="flex flex-col justify-start items-start gap-main max-w-600 w-full "
         ref={formRef}
         onSubmit={(e) => submit(e)}
       >

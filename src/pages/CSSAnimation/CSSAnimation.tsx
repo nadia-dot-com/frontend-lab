@@ -5,6 +5,8 @@ const vapourValues = [
 ];
 
 export function CSSAnimation() {
+
+
   return (
     <div className={classes.cupContainer}>
       <div className={classes.plate}></div>

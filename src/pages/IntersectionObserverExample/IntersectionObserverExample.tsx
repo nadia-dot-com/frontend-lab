@@ -11,7 +11,7 @@ export function IntersectionObserverExample() {
   return (
     <>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] grid-flow-dense justify-center
-      items-start gap-main p-main items-stretch">
+      items-start gap-main p-main">
         <AnimatePresence mode="popLayout">
           {data.map((element, index) => {
             const isFeatured = index % 7 === 0;

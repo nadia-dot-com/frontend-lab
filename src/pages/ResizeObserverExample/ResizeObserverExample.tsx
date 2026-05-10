@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useResize } from "@/hooks/useResize";
 
-export function ResizeObserverExample () {
+export function ResizeObserverExample() {
   const cardRef = useRef<HTMLDivElement>(null);
   const { width } = useResize(cardRef);
 
@@ -23,4 +23,4 @@ export function ResizeObserverExample () {
       <p>Przeciągnij róg elementu, aby zmienić jego rozmiar!</p>
     </div>
   );
-};
+}

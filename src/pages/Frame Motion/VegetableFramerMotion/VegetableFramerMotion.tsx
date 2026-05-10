@@ -7,8 +7,6 @@ export function VegetableFramerMotion({
   vegetable: string;
   onClick: () => void;
 }) {
-
-  console.log(vegetable)
   return (
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
